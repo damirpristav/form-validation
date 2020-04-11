@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+  --primary-color: #009e6c;
+  --error-color: #e70f0f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 50px 0;
+  margin-bottom: 50px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.form {
+  border: 1px solid #eee;
+  padding: 40px;
+}
+
+.form__group {
+  margin-bottom: 20px;
+}
+
+.form__group label,
+.form__group p {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.form__group--radio label,
+.form__group--checkbox label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.form__group--radio label span,
+.form__group--checkbox label span {
+  margin-left: 5px;
+}
+
+.form__group input[type="text"],
+.form__group input[type="file"],
+.form__group input[type="password"],
+.form__group select,
+.form__group textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #eee;
+  outline: 0;
+  transition: box-shadow .3s ease;
+}
+
+.form__group input[type="text"]:focus,
+.form__group input[type="file"]:focus,
+.form__group input[type="password"]:focus,
+.form__group select:focus,
+.form__group textarea:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form__group input[type="text"].error,
+.form__group input[type="file"].error,
+.form__group input[type="password"].error,
+.form__group select.error,
+.form__group textarea.error {
+  border-color: var(--error-color);
+}
+
+.form__error {
+  color: var(--error-color);
+  font-size: 12px;
+  padding: 5px 0;
+  display: none;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}

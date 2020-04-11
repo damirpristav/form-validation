@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Form Validation</h1>
+  </header>
+
+  <div class="container">
+    <form class="form" data-form>
+      <div class="form__group" data-formgroup>
+        <label for="name">Full name</label>
+        <input 
+          type="text" id="name" name="name"
+          data-validate data-required data-required-message="Name is required"
+        >
+        <div class="form__error" data-formerror></div>
+      </div>
+
+      <div class="form__group" data-formgroup>
+        <label for="email">Email</label>
+        <input 
+          type="text" name="email" id="email"
+          data-validate data-required 
+          data-email data-email-message="Email is not valid"
+        >
+        <div class="form__error" data-formerror></div>
+      </div>
+
+      <div class="form__group" data-formgroup>
+        <label for="password">Password</label>
+        <input 
+          type="password" name="password" id="password"
+          data-validate data-required 
+          data-minlength="6" data-maxlength="16"
+          data-match-with="confirmPassword"
+        >
+        <div class="form__error" data-formerror></div>
+      </div>
+
+      <div class="form__group" data-formgroup>
+        <label for="confirmPassword">Confirm Password</label>
+        <input 
+          type="password" name="confirmPassword" id="confirmPassword"
+          data-validate data-required 
+          data-match="password" data-match-message="Passwords must be equal"
+        >
+        <div class="form__error" data-formerror></div>
+      </div>
+
+      <div class="form__group form__group--radio" data-formgroup>
+        <p>Gender</p>
+        <label>
+          <input type="radio" name="gender" value="female" 
+            data-validate data-error-message="Gender is required">
+          <span>Female</span>
+        </label>
+        <label>
+          <input type="radio" name="gender" value="male" data-validate>
+          <span>Male</span>
+        </label>
+        <div class="form__error" data-formerror></div>
+      </div>
+
+      <div class="form__group" data-formgroup>
+        <label for="difficulty">Difficulty</label>
+        <select name="difficulty" id="difficulty" data-validate data-required>
+          <option value="">Select difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <div class="form__error" data-formerror></div>
+      </div>
+
+      <div class="form__group" data-formgroup>
+        <label for="image">Image</label>
+        <input type="file" name="image" id="image"
+          data-validate data-required data-maxfilesize="1024"
+          data-allowed-types="jpg,png" data-allowed-types-message="Only jpg and png formats allowed"
+        >
+        <div class="form__error" data-formerror></div>
+      </div>
+
+      <div class="form__group">
+        <label for="description">Description</label>
+        <textarea name="description" id="description"></textarea>
+      </div>
+
+      <div class="form__group form__group--checkbox" data-formgroup>
+        <label>
+          <input type="checkbox" name="terms" id="terms"
+            data-validate data-error-message="You must accept our Terms and Conditions"
+          >
+          <span>Terms and Conditions</span>
+        </label>
+        <div class="form__error" data-formerror></div>
+      </div>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+
+  <script src="form.js"></script>
+</body>
+</html>
